@@ -12,7 +12,7 @@ namespace SymfonyUtil\Component\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\Request;
 
-interface NullControllerInterface
+interface ControllerModelInterface
 {
     /// @return array
     public function __invoke(Request $request);
