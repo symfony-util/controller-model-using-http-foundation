@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class NullControllerModel implements ControllerModelInterface
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request = null)
     {
         return [];
     }
