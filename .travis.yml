@@ -11,10 +11,12 @@ matrix:
   include:
     - php: 5.4
       env:
+        - SYMFONY_VERSION="2.7.*"
         - PHPUNIT=phpunit-4.8
         - TEST_LINT=`true`
     - php: 5.5
       env:
+        - SYMFONY_VERSION="2.8.*"
         - PHPUNIT=phpunit-4.8
         - TEST_LINT=`true`
         - SENSIO_SECURITY=`true`
@@ -32,6 +34,7 @@ matrix:
         - SENSIO_SECURITY=`true`
     - php: 7.1
       env:
+        - SYMFONY_VERSION="^4.0@dev"
         - PHPUNIT=phpunit
         - TEST_LINT=`true`
         - PHP_CS_FIXER=`true`
@@ -71,6 +74,7 @@ before_install:
 
 install:
   - composer validate
+  - if [[ -v SYMFONY_VERSION ]]; then composer require symfony/symfony:${SYMFONY_VERSION} --no-scripts --no-progress --no-suggest; fi
   - composer install --no-scripts --no-progress --no-suggest
   - if [[ -f config/parameters.yml.travis ]]; then cp config/parameters.yml.travis config/parameters.yml; fi
   - composer up --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
