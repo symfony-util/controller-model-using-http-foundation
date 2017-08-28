@@ -23,7 +23,7 @@ final class NullControllerModelTest extends TestCase
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\HttpFoundation\NullControllerModel',
-            new NullControllerModel();
+            new NullControllerModel()
         );
     }
 
