@@ -1,0 +1,29 @@
+{
+    "name": "symfony-util/controller-model-using-http-foundation",
+    "description": "Model to be called in controller with Request as argument",
+    "keywords": ["controller", "symfony", "snowyowl"],
+    "homepage": "https://github.com/symfony-util/controller-model-using-http-foundation",
+    "license": "ISC",
+    "authors": [
+        {"name": "Jean-bernard Addor"},
+        {"name": "Community", "homepage": "https://github.com/symfony-util/controller-model-using-http-foundation"}
+    ],
+    "require": {
+        "symfony/http-foundation": "^2.0 || ^3.0 || ^4.0",
+    },
+    "require-dev": {
+    },
+    "suggest": {
+        "symfony-util/controller-using-templating-http-foundation-symfony-model": "A model based controller"
+        "symfony-util/controller-using-form-routing-templating-http-foundation-symfony-model": "A model based controller"
+    },
+    "autoload": {
+        "psr-4": { "SymfonyUtil\\Component\\HttpFoundation\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
+
