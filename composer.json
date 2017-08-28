@@ -14,7 +14,7 @@
     "require-dev": {
     },
     "suggest": {
-        "symfony-util/controller-using-templating-http-foundation-symfony-model": "A model based controller"
+        "symfony-util/controller-using-templating-http-foundation-symfony-model": "A model based controller",
         "symfony-util/controller-using-form-routing-templating-http-foundation-symfony-model": "A model based controller"
     },
     "autoload": {
