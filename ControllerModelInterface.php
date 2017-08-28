@@ -14,5 +14,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface NullControllerInterface
 {
+    /// @return array
     public function __invoke(Request $request);
 }
