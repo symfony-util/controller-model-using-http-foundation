@@ -11,7 +11,9 @@
 
 namespace SymfonyUtil\Component\HttpFoundation;
 
-class NullControllerModel // implements interface in SU//HttpF
+use Symfony\Component\HttpFoundation\Request;
+
+class NullControllerModel implements ControllerModelInterface
 {
     public function __invoke(Request $request)
     {
