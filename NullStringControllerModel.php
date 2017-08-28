@@ -13,7 +13,7 @@ namespace SymfonyUtil\Component\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\Request;
 
-class NullStringControllerModel implements ControllerModelInterface
+class NullStringControllerModel implements StringControllerModelInterface
 {
     public function __invoke($id, Request $request = null)
     {
