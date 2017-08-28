@@ -29,6 +29,6 @@ final class NullControllerModelTest extends TestCase
 
     public function testReturnsArray()
     {
-        $this->assertInternalType('array', (new NullControllerModel()))->__invoke(new Request);
+        $this->assertInternalType('array', (new NullControllerModel()))->__invoke(new Request());
     }
 }
