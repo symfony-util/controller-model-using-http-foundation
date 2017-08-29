@@ -10,6 +10,7 @@
  */
 
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use SymfonyUtil\Component\HttpFoundation\NullControllerModel;
@@ -36,6 +37,15 @@ final class NullControllerModelTest extends TestCase
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\HttpFoundation\NullControllerModel',
             new NullControllerModel(new Response())
+        );
+    }
+
+    public function testRedirectResponseCanBeCreated()
+    {
+        $this->assertInstanceOf(
+            // ::class, // 5.4 < php
+            'SymfonyUtil\Component\HttpFoundation\NullControllerModel',
+            new NullControllerModel(new RedirectResponse('http://example.org/, 302)) // Redirect example
         );
     }
 
