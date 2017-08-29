@@ -27,11 +27,18 @@ final class NullStringControllerModelTest extends TestCase
         );
     }
 
-    public function testReturnsArray()
+    public function testReturnsResponseParameters()
     {
+        $this->assertInstanceOf(
+            // ::class, // 5.4 < php
+            'SymfonyUtil\Component\HttpFoundation\ResponseParameters',
+            (new NullControllerModel())->__invoke('', new Request())
+        );
+        /*
         $this->assertInternalType('array', (new NullStringControllerModel())->__invoke('', new Request()));
         $this->assertSame([], (new NullStringControllerModel())->__invoke('', new Request()));
         $this->assertSame(0, count((new NullStringControllerModel())->__invoke('', new Request())));
         $this->assertEmpty((new NullStringControllerModel())->__invoke('', new Request()));
+        */
     }
 }
