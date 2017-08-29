@@ -12,6 +12,7 @@
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use SymfonyUtil\Component\HttpFoundation\NullControllerModel;
+use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
 
 /**
  * @covers \SymfonyUtil\Component\HttpFoundation\NullControllerModel
@@ -27,11 +28,18 @@ final class NullControllerModelTest extends TestCase
         );
     }
 
-    public function testReturnsArray()
+    public function testReturnsResponseParameters()
     {
+        $this->assertInstanceOf(
+            // ::class, // 5.4 < php
+            'SymfonyUtil\Component\HttpFoundation\ResponseParameters',
+            (new NullControllerModel())->__invoke(new Request())
+        );
+        /*
         $this->assertInternalType('array', (new NullControllerModel())->__invoke(new Request()));
         $this->assertSame([], (new NullControllerModel())->__invoke(new Request()));
         $this->assertSame(0, count((new NullControllerModel())->__invoke(new Request())));
         $this->assertEmpty((new NullControllerModel())->__invoke(new Request()));
+        */
     }
 }
