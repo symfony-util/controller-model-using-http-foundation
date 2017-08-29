@@ -26,7 +26,7 @@ class ResponseParameters
 
     public function getParameters()
     {
-         return $this->parameters; // array
+        return $this->parameters; // array
     }
 
     public function getResponse()
