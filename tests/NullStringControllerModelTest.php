@@ -32,7 +32,7 @@ final class NullStringControllerModelTest extends TestCase
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\HttpFoundation\ResponseParameters',
-            (new NullControllerModel())->__invoke('', new Request())
+            (new NullStringControllerModel())->__invoke('', new Request())
         );
         /*
         $this->assertInternalType('array', (new NullStringControllerModel())->__invoke('', new Request()));
