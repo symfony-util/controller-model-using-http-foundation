@@ -15,22 +15,22 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ResponseParameters
 {
-    protected $response;
     protected $parameters;
+    protected $response;
 
-    public function __construct(Response $response, array $parameters)
+    public function __construct(array $parameters, Response $response = null)
     {
-        $this->response = $response;
         $this->parameters = $parameters;
-    }
-
-    public function getResponse()
-    {
-        return $this->response;
+        $this->response = $response;
     }
 
     public function getParameters()
     {
-         return $this->parameters;
+         return $this->parameters; // array
+    }
+
+    public function getResponse()
+    {
+        return $this->response; // Response or null
     }
 }
