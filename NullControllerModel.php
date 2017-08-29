@@ -12,11 +12,19 @@
 namespace SymfonyUtil\Component\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class NullControllerModel implements ControllerModelInterface
 {
+    protected $response;
+
+    public function __construct(Response $response = null)
+    {
+        $this->response = $response;
+    }
+   
     public function __invoke(Request $request = null)
     {
-        return new ResponseParameters([]);
+        return new ResponseParameters([], $this->response);
     }
 }
