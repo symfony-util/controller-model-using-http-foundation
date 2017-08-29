@@ -84,4 +84,24 @@ final class NullControllerModelTest extends TestCase
             (new NullControllerModel(new Response()))->__invoke()
         );
     }
+
+    public function testRedirectResponseReturnsUrl()
+    {
+        $example = 'http://example.org/';
+        $responseParameters = (new NullControllerModel(new RedirectResponse($example)))->__invoke();
+        $this->assertInstanceOf(
+            // ::class, // 5.4 < php
+            'SymfonyUtil\Component\HttpFoundation\ResponseParameters',
+            $responseParameters
+        );
+        $response = $responseParameters->getResponse();
+        $this->assertInstanceOf(
+            // ::class, // 5.4 < php
+            'Symfony\Component\HttpFoundation\Response',
+            $response
+        );
+        $url = $result-> getTargetUrl();
+        $this->assertInternalType('string', $url);
+        $this->assertSame($example, $url);
+    }
 }
