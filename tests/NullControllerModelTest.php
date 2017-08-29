@@ -100,7 +100,7 @@ final class NullControllerModelTest extends TestCase
             'Symfony\Component\HttpFoundation\Response',
             $response
         );
-        $url = $result-> getTargetUrl();
+        $url = $result->getTargetUrl();
         $this->assertInternalType('string', $url);
         $this->assertSame($example, $url);
     }
