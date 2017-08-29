@@ -15,5 +15,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface StringControllerModelInterface
 {
+    /// @return ResponseParametersInterface
     public function __invoke($id, Request $request = null);
 }
