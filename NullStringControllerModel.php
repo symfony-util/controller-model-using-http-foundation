@@ -17,6 +17,6 @@ class NullStringControllerModel implements StringControllerModelInterface
 {
     public function __invoke($id, Request $request = null)
     {
-        return [];
+        return new ResponseParameters([]);
     }
 }
