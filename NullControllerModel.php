@@ -17,6 +17,6 @@ class NullControllerModel implements ControllerModelInterface
 {
     public function __invoke(Request $request = null)
     {
-        return new ResponseParameters({});
+        return new ResponseParameters([]);
     }
 }
