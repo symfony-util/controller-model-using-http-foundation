@@ -13,7 +13,7 @@ namespace SymfonyUtil\Component\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class ResponseParameters
+class ResponseParameters implements ResponseParametersInterface
 {
     protected $parameters;
     protected $response;
