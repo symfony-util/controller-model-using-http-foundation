@@ -16,6 +16,8 @@ use Symfony\Component\HttpFoundation\Response;
 interface ResponseParametersInterface
 {
     public function __construct(array $parameters, Response $response = null);
+
     public function getParameters();
+
     public function getResponse();
 }
