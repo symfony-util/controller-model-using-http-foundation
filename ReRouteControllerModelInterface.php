@@ -25,10 +25,7 @@ interface ReRouteControllerModelInterface
      *
      * @return ResponseParameters 
      */
-    public function __invoke($route, $parameters = array())
-    {
-        return new ResponseParameters([], RedirectResponse($this->router->generate($route, $parameters)));
-    }
+    public function __invoke($route, $parameters = []);
 }
 
 // Inspired from https://github.com/symfony/symfony/blob/v3.3.8/src/Symfony/Bundle/FrameworkBundle/Controller/ControllerTrait.php
