@@ -100,6 +100,11 @@ final class NullControllerModelTest extends TestCase
             'Symfony\Component\HttpFoundation\Response',
             $response
         );
+        $this->assertInstanceOf(
+            // ::class, // 5.4 < php
+            'Symfony\Component\HttpFoundation\RedirectResponse',
+            $response
+        );
         $url = $response->getTargetUrl();
         $this->assertInternalType('string', $url);
         $this->assertSame($example, $url);
