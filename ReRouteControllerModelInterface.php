@@ -13,17 +13,17 @@ namespace SymfonyUtil\Component\HttpFoundation;
 // Similar namespace in Symfony
 // https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/HttpFoundation
 
-use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
+// use SymfonyUtil\Component\HttpFoundation\ResponseParameters; // for future return type
 
 interface ReRouteControllerModelInterface
 {
     /**
      * Returns ResponseParameters to the given route with the given parameters.
      *
-     * @param string $route         The name of the route
-     * @param mixed  $parameters    An array of parameters
+     * @param string $route      The name of the route
+     * @param mixed  $parameters An array of parameters
      *
-     * @return ResponseParameters 
+     * @return ResponseParameters
      */
     public function __invoke($route, $parameters = []);
 }
