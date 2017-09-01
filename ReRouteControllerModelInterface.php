@@ -14,6 +14,8 @@ namespace SymfonyUtil\Component\HttpFoundation;
 // Similar namespace in Symfony
 // https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/HttpFoundation
 
+use Symfony\Component\HttpFoundation\Request;
+
 // use SymfonyUtil\Component\HttpFoundation\ResponseParameters; // for future return type
 
 interface ReRouteControllerModelInterface
