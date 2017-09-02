@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace SymfonyUtil\Component\RoutingHttpFoundation\Generator;
+namespace SymfonyUtil\Component\HttpFoundation;
 
 // Similar namespace in Symfony
 // https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/Routing/Generator
@@ -18,16 +18,17 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use SymfonyUtil\Component\HttpFoundation\ReRouteControllerModelInterface;
+use SymfonyUtil\Component\HttpFoundation\ReRouteInterface;
 
 // use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
 
-class ReRouteControllerModel implements ControllerModelInterface
+class ReRouteControllerModel implements ReRouteControllerModelInterface
 {
-    protected $router;
+    protected $ReRoute;
 
-    public function __construct(UrlGeneratorInterface $urlGenerator)
+    public function __construct(ReRouteInterface $ReRoute)
     {
-        $this->urlGenerator = $urlGenerator;
+        $this->ReRoute = $ReRoute;
     }
 
     /**
@@ -42,9 +43,7 @@ class ReRouteControllerModel implements ControllerModelInterface
      */
     public function __invoke($route, $parameters = [], Request $request = null)
     {
-        // return new ResponseParameters([], new RedirectResponse($this->urlGenerator->generate($route, $parameters)));
-
-        return new RedirectResponse($this->urlGenerator->generate($route, $parameters));
+        return new ReRoute($route, $parameters);
     }
 }
 
