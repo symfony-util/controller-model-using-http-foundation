@@ -43,7 +43,7 @@ class ReRouteControllerModel implements ReRouteControllerModelInterface
      */
     public function __invoke($route, $parameters = [], Request $request = null)
     {
-        return new ResponseParameters({}, $this->reRoute($route, $parameters));
+        return new ResponseParameters([], $this->reRoute($route, $parameters));
     }
 }
 
