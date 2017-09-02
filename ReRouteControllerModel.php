@@ -24,11 +24,11 @@ use SymfonyUtil\Component\HttpFoundation\ReRouteInterface;
 
 class ReRouteControllerModel implements ReRouteControllerModelInterface
 {
-    protected $ReRoute;
+    protected $reRoute;
 
-    public function __construct(ReRouteInterface $ReRoute)
+    public function __construct(ReRouteInterface $reRoute)
     {
-        $this->ReRoute = $ReRoute;
+        $this->reRoute = $reRoute;
     }
 
     /**
@@ -43,7 +43,7 @@ class ReRouteControllerModel implements ReRouteControllerModelInterface
      */
     public function __invoke($route, $parameters = [], Request $request = null)
     {
-        return new ReRoute($route, $parameters);
+        return new ResponseParameters({}, $this->reRoute($route, $parameters));
     }
 }
 
