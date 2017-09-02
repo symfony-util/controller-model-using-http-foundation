@@ -27,7 +27,7 @@ interface ReRouteControllerModelInterface
      * @param mixed   $parameters An array of parameters
      * @param Request $request    May be used in some redirecting implementations for eg. browser detection
      *
-     * @return Response
+     * @return ResponseParameters
      */
     public function __invoke($route, $parameters = [], Request $request = null);
 }
