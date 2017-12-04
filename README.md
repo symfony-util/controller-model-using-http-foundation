@@ -11,5 +11,5 @@ Model to be called in controller with Request as argument
 [![Scrutinizer](https://scrutinizer-ci.com/g/symfony-util/controller-model-using-http-foundation/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/symfony-util/controller-model-using-http-foundation/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0c01c6a8-eb4d-4ccc-a70a-fa6c032f3178/mini.png)](https://insight.sensiolabs.com/projects/0c01c6a8-eb4d-4ccc-a70a-fa6c032f3178)
 <!---
+[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/.svg)](https://insight.sensiolabs.com/projects/)
 -->
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/0c01c6a8-eb4d-4ccc-a70a-fa6c032f3178.svg)](https://insight.sensiolabs.com/projects/0c01c6a8-eb4d-4ccc-a70a-fa6c032f3178)
