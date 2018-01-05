@@ -16,9 +16,10 @@ namespace SymfonyUtil\Component\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\Request;
 
-// use SymfonyUtil\Component\HttpFoundation\ReRouteControllerModelInterface;
-// use SymfonyUtil\Component\HttpFoundation\ReRouteInterface;
-// use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
+// Used from same namespace
+// ReRouteControllerModelInterface
+// ReRouteInterface
+// ResponseParameters
 
 class ReRouteControllerModel implements ReRouteControllerModelInterface
 {
