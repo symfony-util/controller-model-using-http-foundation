@@ -15,6 +15,7 @@ namespace SymfonyUtil\Component\HttpFoundation;
 // https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/HttpFoundation
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 // use SymfonyUtil\Component\HttpFoundation\ResponseParameters; // for future return type
 
