@@ -33,7 +33,7 @@ class ReRouteControllerModel implements ReRouteControllerModelInterface
     /**
      * Returns ResponseParameters to the given route with the given parameters.
      *
-     * @param string $routeName      The name of the route
+     * @param string $routeName  The name of the route
      * @param mixed  $parameters An array of parameters
      *
      * @return ResponseParametersInterface
@@ -42,7 +42,7 @@ class ReRouteControllerModel implements ReRouteControllerModelInterface
      */
     public function __invoke($routeName, $parameters = [], Request $request = null)
     {
-        return new ResponseParameters([], $this->reRoute($route, $parameters));
+        return new ResponseParameters([], $this->reRoute($routeName, $parameters));
     }
 }
 
