@@ -15,7 +15,6 @@ namespace SymfonyUtil\Component\HttpFoundation;
 // https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/Routing/Generator
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 // Used from same namespace
 // ReRouteControllerModelInterface
@@ -34,14 +33,14 @@ class ReRouteControllerModel implements ReRouteControllerModelInterface
     /**
      * Returns ResponseParameters to the given route with the given parameters.
      *
-     * @param string $route      The name of the route
+     * @param string $routeName      The name of the route
      * @param mixed  $parameters An array of parameters
      *
-     * @return Response
+     * @return ResponseParametersInterface
      *
      * @see Interface ReRouteControllerModelInterface
      */
-    public function __invoke($route, $parameters = [], Request $request = null)
+    public function __invoke($routeName, $parameters = [], Request $request = null)
     {
         return new ResponseParameters([], $this->reRoute($route, $parameters));
     }
