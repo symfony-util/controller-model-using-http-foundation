@@ -15,6 +15,7 @@ namespace SymfonyUtil\Component\HttpFoundation;
 // https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/Routing/Generator
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 // Used from same namespace
 // ReRouteControllerModelInterface
