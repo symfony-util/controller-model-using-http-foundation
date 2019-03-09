@@ -38,9 +38,11 @@ matrix:
   - php: 5.4
     env:
     - SYMFONY_VERSION="2.7.*"
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
   - php: 5.4
     env:
     - SYMFONY_VERSION="2.3.*"
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
   - php: 5.3 # Symfony 2.8. First PHP version with "composer"
     dist: precise
   - php: 5.3
@@ -53,7 +55,7 @@ matrix:
     - SYMFONY_VERSION="2.3.*"
   allow_failures:
   - php: nightly
-  - php: 7.3
+  - php: 7.4
   - php: 5.3
   - env:
     - SYMFONY_VERSION="2.7.*" # https://github.com/symfony/symfony/issues/26315
@@ -107,8 +109,8 @@ script:
 - if command -v php-cs-fixer; then php-cs-fixer fix --diff --dry-run -vvv --using-cache=no; fi
 - if command -v phpstan; then phpstan analyse -v --level max *.php; fi # tests/*.php
 - php $xdebug_php $(command -v phpunit)  --colors=always
-- security-checker security:check ~/.composer/composer.lock --end-point=https://security.symfony.com/check_lock
-- security-checker security:check --end-point=https://security.symfony.com/check_lock
+- security-checker security:check ~/.composer/composer.lock $END_POINT
+- security-checker security:check $END_POINT
 #^ This checks that the application doesn't use dependencies with known security vulnerabilities
 #^ --end-point needed for php 5.4 and older
 - if [[ -v VENDOR_LINT ]]; then for f in $(find ./vendor -name \*.php); do php -l $f > /dev/null; done; fi
