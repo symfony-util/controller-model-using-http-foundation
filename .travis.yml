@@ -30,11 +30,14 @@ matrix:
   - php: 7.3
     env:
     - SYMFONY_VERSION="2.3.*"
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
   - php: 7.1
   - php: 7.0
   - php: 5.6
   - php: 5.5
   - php: 5.4 # Symfony 2.8
+    env:
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
   - php: 5.4
     env:
     - SYMFONY_VERSION="2.7.*"
@@ -45,14 +48,18 @@ matrix:
     - END_POINT="--end-point=http://security.symfony.com/check_lock"
   - php: 5.3 # Symfony 2.8. First PHP version with "composer"
     dist: precise
+    env:
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
   - php: 5.3
     dist: precise
     env:
     - SYMFONY_VERSION="2.7.*"
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
   - php: 5.3
     dist: precise
     env:
     - SYMFONY_VERSION="2.3.*"
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
   allow_failures:
   - php: nightly
   - php: 7.4
@@ -60,7 +67,11 @@ matrix:
   - env:
     - SYMFONY_VERSION="2.7.*" # https://github.com/symfony/symfony/issues/26315
   - env:
+    - SYMFONY_VERSION="2.7.*" # https://github.com/symfony/symfony/issues/26315
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
+  - env:
     - SYMFONY_VERSION="2.3.*"
+    - END_POINT="--end-point=http://security.symfony.com/check_lock"
 
 before_install:
 - echo $PHPUNIT
